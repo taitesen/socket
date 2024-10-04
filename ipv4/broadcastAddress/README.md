@@ -1,6 +1,6 @@
-# [!TIP]
-To run this program
-```bash
-make all
-./bin
-```
+[!TIP]
+>To run this program:
+>```bash
+>make all
+>./bin
+>```
