@@ -17,12 +17,12 @@
 >printf("Integer equivalent of %s is %d\n", ip_addr, int_ip);
 >```
 ---
-> #### 3. void get_abcd_ip_format(unsigned int ip_addr, char *output_buffer);
+> #### 3. void get_ipv4(unsigned int ip_addr, char *output_buffer);
 >```c
 >unsigned int int_ip = "1058138165"; // 122.172.178.53
 >char buffer[PREFIX_LEN];
 >memset(buffer, 0, PREFIX_LEN);
->get_abcd_ip_format(int_ip, buffer);
+>get_ipv4(int_ip, buffer);
 >printf("IP in A.B.C.D format = %s\n", buffer);
 >```
 ---
@@ -36,10 +36,10 @@
 >printf("Network ID: %s\n", buffer);
 >```
 ---
-> #### 5. unsigned int get_subnet_cardinality(char mask);
+> #### 5. unsigned int get_host_cardinality(char mask);
 >```c
 >unsigned char mask = 24;
->printf("Subnet cardinality for Mask %u is %u\n", mask, get_subnet_cardinality(mask));
+>printf("Subnet cardinality for Mask %u is %u\n", mask, get_host_cardinality(mask));
 >```
 ---
 > #### 6. int check_ip_subnet_membership(char *network_id, char mask, char *ip_addr);
