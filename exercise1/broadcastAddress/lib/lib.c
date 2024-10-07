@@ -8,23 +8,23 @@ void get_broadcast_address(char *ipAddress, char mask, char *outputBuffer) {
         return;
     }
     int k = 32 - (int)mask;
-    if( k == 32 || k == 0 ) {
+    if (k == 32 || k == 0) {
         fprintf(stderr, "Invalid Mask\n");
         return;
     }
-    if(k <= 8) {
+    if (k <= 8) {
         octet4 |= (1 << k) - 1;
         sprintf(outputBuffer, "%d.%d.%d.%d", octet1, octet2, octet3, octet4);
         return;
     }
-    if(k >= 9 && k <= 16) {
+    if (k >= 9 && k <= 16) {
         octet4 |= FULLFLAG;
         k -= 8;
         octet3 |= (1 << k) - 1;
         sprintf(outputBuffer, "%d.%d.%d.%d", octet1, octet2, octet3, octet4);
         return;
     }
-    if(k >= 17 && k <= 24) {
+    if (k >= 17 && k <= 24) {
         octet4 |= FULLFLAG;
         octet3 |= FULLFLAG;
         k -= 16;
@@ -32,7 +32,7 @@ void get_broadcast_address(char *ipAddress, char mask, char *outputBuffer) {
         sprintf(outputBuffer, "%d.%d.%d.%d", octet1, octet2, octet3, octet4);
         return;
     }
-    if(k >= 25 && k <= 31) {
+    if (k >= 25 && k <= 31) {
         octet4 |= FULLFLAG;
         octet3 |= FULLFLAG;
         octet2 |= FULLFLAG;

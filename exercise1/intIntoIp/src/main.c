@@ -1,6 +1,6 @@
 #include "../include/lib.h"
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     unsigned int int_ip = 1058138165;
